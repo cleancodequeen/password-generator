@@ -10,10 +10,10 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var passLength = prompt('Please enter password length');
 
-  // if (passLength < 8 || passLength > 128) {
-  //   alert('Please enter between 8 and 128 characters.');
-  //   generatePassword();
-  // }
+  if (passLength < 8 || passLength > 128) {
+    alert('Please enter between 8 and 128 characters.');
+    generatePassword();
+  }
 
   var ucPrompt = confirm('Include uppercase letters?');
   var lcPrompt = confirm('Include lowercase characters?');
@@ -41,10 +41,10 @@ function generatePassword() {
       var randSymNum = Math.floor(Math.random() * symbol.length);
       passString += symbol.substring(randSymNum, randSymNum - 1);
     }
+  }
 
     return passString;
 
-  }
 }
 
 // Write password to the #password input
